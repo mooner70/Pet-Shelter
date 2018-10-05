@@ -1,0 +1,23 @@
+<router-outlet>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+      </div>
+      <div class="col-6">
+        <p>Details about {{newPet.name}}</p>
+        <p><b>Pet type:</b> {{newPet.type}}</p>
+        <p><b>Description:</b> {{newPet.description}}</p>
+        <p><b>Skills:</b> {{newPet.skills}}</p>
+        <p><b>ID1:</b> {{newPet.id}}</p>
+        <p><b>ID2:</b> {{newPet._id}}</p>
+        <!-- <p><b>Likes:</b> {{newPet.likes}}</p> -->
+
+        <button class="btn btn-primary btn-sm mr-2">Like this pet</button>
+        <button (click)="delete(newPet._id)" class="btn btn-danger btn-sm mr-2">Adopt this pet</button>
+        <button [routerLink]="['/']" class="btn btn-success btn-sm">Home</button>
+      </div>
+      <div class="col-sm">
+      </div>
+    </div>
+  </div>
+</router-outlet>

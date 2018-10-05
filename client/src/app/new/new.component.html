@@ -1,0 +1,50 @@
+<router-outlet>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+      </div>
+      <div class="col-6">
+        <p>Know of a pet needing a home?</p>
+        <form (submit)="create()" class="postForm">
+          <small style="color:red;" *ngIf="errors.name">{{ errors.name.message }}</small>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Pet Name</span>
+            </div>
+            <input type="text" name="newPet.name" [(ngModel)]="newPet.name" class="form-control" aria-describedby="basic-addon1">
+          </div>
+          <small style="color:red;" *ngIf="errors.name">{{ errors.type.message }}</small>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Pet Type</span>
+            </div>
+            <input type="text" name="newPet.type" [(ngModel)]="newPet.type" class="form-control" aria-describedby="basic-addon1">
+          </div>
+          <small style="color:red;" *ngIf="errors.name">{{ errors.description.message }}</small>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Description</span>
+            </div>
+            <input type="text" name="newPet.description" [(ngModel)]="newPet.description" class="form-control" aria-describedby="basic-addon1">
+
+          </div>
+          <small style="color:red;" *ngIf="errors.name">{{ errors.skills.message }}</small>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Skills</span>
+            </div>
+            <input type="text" name="newPet.skills" [(ngModel)]="newPet.skills" class="form-control" aria-describedby="basic-addon1">
+
+          </div>
+          <button type="submit" class="btn btn-primary btn-sm mr-3">Add pet</button>
+          <button [routerLink]="['/']" class="btn btn-primary btn-sm">Cancel</button>
+
+        </form>
+
+      </div>
+      <div class="col-sm">
+      </div>
+    </div>
+  </div>
+
+</router-outlet>
